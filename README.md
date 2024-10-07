@@ -2,36 +2,42 @@
 
 ## Project Overview
 
-This project focuses on building a machine learning model to forecast energy consumption over time. The main objective is to improve energy management and inform decision-making processes, particularly in the energy trading sector. Accurate predictions of energy demand can help anticipate price movements, reduce trading risks, and optimize energy trading strategies.
+This project explores energy consumption forecasting through an analysis of historical data using machine learning techniques. The primary goal is to better understand the patterns and trends in energy demand over time, using this analysis to develop more accurate forecasts. These insights could be useful for various applications, including energy management and planning.
 
 ## Dataset
 
-The dataset used in this project contains energy consumption data (`PJME_MW`) with hourly records. The data spans several years and is used to train, validate, and test the model's forecasting capabilities.
+The dataset used contains hourly energy consumption data (`PJME_MW`) from the PJM East region, spanning several years. This dataset serves as the foundation for building forecasting models, and the analysis provides insights into daily, weekly, and seasonal energy consumption trends.
 
 ## Methodology
 
 The project includes the following steps:
 
 1. **Data Preprocessing**: 
-   - Loading and cleaning the time series data.
-   - Handling missing values and resampling the data to maintain consistency.
+   - Loaded and cleaned the time series data.
+   - Handled missing values and engineered time-based features such as hour, day of week, and month to improve the model's predictive capabilities.
 
-2. **Modeling**:
-   - Development of a historical prediction model using machine learning techniques.
-   - Evaluation of the model’s performance on different time granularities such as yearly, monthly, weekly, and daily forecasts.
-   
-3. **Evaluation**:
-   - Visualization of the model's predictions versus the actual energy consumption data to assess its accuracy.
+2. **Exploratory Data Analysis (EDA)**:
+   - Visualized energy consumption trends at different time intervals (hourly, daily, monthly) to understand underlying patterns.
+   - Analyzed seasonal peaks and troughs in energy demand, identifying factors like time of day and seasonality as key drivers.
 
-## Key Features
+3. **Modeling**:
+   - Built an XGBoost regression model to forecast energy consumption.
+   - Evaluated the model’s performance using metrics such as R², RMSE, and MSE.
 
-- **Accurate Forecasting**: The model demonstrates a strong fit to historical data, showing accurate forecasts at different time intervals (yearly, monthly, weekly, and daily).
-- **Energy Trading**: The model's predictions support energy trading strategies by providing more accurate demand forecasts, potentially reducing trading risks and optimizing contract pricing.
+4. **Evaluation**:
+   - Visualized predicted vs actual energy consumption to assess model accuracy and identify areas for improvement, particularly in low and high consumption periods.
+
+## Key Findings
+
+- **Seasonal and Daily Trends**: The analysis uncovered clear daily patterns, with energy consumption peaking during the afternoon hours and decreasing overnight. Additionally, seasonal patterns were identified, with higher demand during summer and winter months due to cooling and heating needs.
+- **Model Performance**: The model was able to capture the overall cyclical nature of energy consumption, with good accuracy in forecasting short-term fluctuations and long-term seasonal trends.
 
 ## Next Steps
 
-The project aims to extend the model's capabilities by incorporating energy pricing forecasts to support more informed buying and selling decisions based on predicted demand. This is currently a work in progress.
+Future directions for this project include:
+- **Feature Expansion**: Incorporating external factors like weather data to improve forecasting accuracy.
+- **Model Optimization**: Further tuning the model to reduce errors during peak demand and low consumption periods.
 
 ## Conclusion
 
-This project demonstrates the potential of machine learning in forecasting energy consumption, providing valuable insights for energy trading and management. Future improvements include incorporating pricing models for more comprehensive decision-making support in energy trading.
+This project serves as an initial exploration of energy consumption trends and the potential of machine learning models for time series forecasting. The insights gained from this analysis can help inform energy management decisions and further research into more advanced forecasting techniques.
